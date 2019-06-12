@@ -29,7 +29,7 @@ public class MainViewController implements Initializable {
 	
 	@FXML
 	public void onMenuItemDepartmentAction() {
-		System.out.println("onMenuItemDepartmentAction");
+		loadView("/gui/DepartmentList.fxml");
 	}
 	
 	@FXML
@@ -45,20 +45,17 @@ public class MainViewController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle urb) {
-		
-		
-		
 	}
 	
-	
+	/*Método carrega tela*/
 	private synchronized void loadView(String absoluteName) {
-		
 		try {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
-		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));		
 		VBox newVBox = loader.load();
 		
 		Scene mainScene = Main.getMainScene();
+		
+		//Referencia do Vbox do Menu Principal
 		VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
 		
 		Node mainMenu = mainVBox.getChildren().get(0);
@@ -68,7 +65,7 @@ public class MainViewController implements Initializable {
 		
 		
 		}catch(IOException e) {
-			Alerts.showAlert("IO Exception", "Error loading message", e.getMessage(), AlertType.ERROR);
+			Alerts.showAlert("IO Exception", "Error loading message", e.getMessage(), AlertType.ERROR); 
 		}
 	}
 
