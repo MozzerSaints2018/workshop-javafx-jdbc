@@ -1,5 +1,10 @@
 package gui;
 
+/**
+ * Classe com referencias de controles na página principal
+ * @author Mozzer
+ * **/
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
